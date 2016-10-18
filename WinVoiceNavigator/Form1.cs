@@ -31,6 +31,7 @@ namespace WinVoiceNavigator
             speech.Volume = (int)numericUpDown1.Value;
             speech.Speed = (int)numericUpDown2.Value;
             speech.Pitch= (int)numericUpDown3.Value;
+            speech.MainVolume = (int)numericUpDown4.Value;
             speech.Speak(textBox1.Text);
         }
     }

@@ -17,6 +17,7 @@ namespace WinVoiceNavigator
         private int speed = 0;
         private int pitch = 0;
 
+        public int MainVolume { get; set; }
         public int Volume { get { return volume; } set { volume = Math.Max(0, Math.Min(100, value)); } }
         public int Speed { get { return speed; } set { speed = Math.Max(-10, Math.Min(10, value)); } }
         public int Pitch { get { return pitch; } set { pitch = Math.Max(-10, Math.Min(10, value)); } }
@@ -49,6 +50,8 @@ namespace WinVoiceNavigator
             {
                 return false;
             }
+
+            spVoice.Volume = MainVolume;
 
             spVoice.Speak(
                 string.Format(xmlFormat, Volume, Speed, Pitch, text),
